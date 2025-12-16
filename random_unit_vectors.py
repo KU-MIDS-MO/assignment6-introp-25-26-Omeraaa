@@ -1,7 +1,15 @@
+import numpy as np
+from numpy.linalg import norm
+
 def random_unit_vectors(num_vectors, dim):
-    """
-    Replace the code below with your own implementation.
-    """
-    ### Replace with your own code (begin) ###
-    pass
-    ### Replace with your own code (end)   ###
+    matrix = np.random.randn(num_vectors, dim)
+
+    result_list = []
+    for vector in matrix:
+        vec_len = norm(vector)
+        
+        unit_vec = vector / vec_len
+        
+        result_list.append(unit_vec)
+
+    return np.array(result_list)
